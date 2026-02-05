@@ -118,6 +118,9 @@
       }
     }
   }
+  .tagline {
+  color: #007bff; /* clean blue */
+}
 
   /* ✅ SAME .btn_wrapper, just moved lower (no button style changes) */
   .btn_wrapper {
