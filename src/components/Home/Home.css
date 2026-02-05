@@ -11,16 +11,15 @@
   /* Background layer */
   .banner_image {
     position: absolute;
-    inset: 0; /* top:0; right:0; bottom:0; left:0 */
+    inset: 0;
     z-index: 1;
 
-    background: url('../../assets/banner/banner-img.jpg') no-repeat;
+    background: url('../../assets/banner/banner.jpg') no-repeat center center;
     background-size: cover;
 
-    /* Push the “center” of the banner AWAY from the side image */
+    /* Slight shift so it doesn’t sit behind side image */
     background-position: 65% center;
 
-    /* If you had any overlay before, ensure none */
     &::before {
       content: none;
       display: none;
@@ -35,18 +34,17 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 2rem;
+    gap: 3rem; /* more spacing */
 
-    /* Give content breathing room so it doesn't sit on edges */
-    padding: 0 2rem;
+    padding: 0 3rem;
 
     @media (max-width: 992px) {
       flex-direction: column-reverse;
-      padding: 0 1.25rem;
+      padding: 0 1.5rem;
     }
 
     .col {
-      width: calc(100% / 2 - 15px);
+      width: calc(100% / 2 - 20px);
       position: relative;
 
       @media (max-width: 992px) {
@@ -55,7 +53,7 @@
     }
 
     .title {
-      width: 80%;
+      width: 90%;
       font-size: 4rem;
       line-height: 5rem;
       font-weight: 200;
@@ -68,7 +66,7 @@
 
       @media (max-width: 992px) {
         width: 100%;
-        margin-top: 10rem;
+        margin-top: 8rem;
         text-align: center;
         line-height: 4rem;
       }
@@ -79,7 +77,7 @@
     }
 
     p {
-      width: 80%;
+      width: 90%;
       margin: 0;
       font-size: 1.143rem;
       line-height: 2rem;
@@ -91,31 +89,31 @@
       }
     }
 
-    /* SIDE IMAGE (the small image on the side) */
+    /* SIDE IMAGE */
     .sub_banner_image {
       position: relative;
-      z-index: 4; /* ensure it's always above background */
-      background: none;    /* remove colored block “border” look */
-      border-radius: 0;    /* remove rounding if you want */
+      z-index: 4;
+      background: none;
+      border-radius: 0;
 
       display: flex;
       justify-content: flex-end;
 
       img {
-        width: 360px;        /* small side image */
+        width: 480px;          /* ⬅ bigger */
         max-width: 100%;
         height: auto;
         display: block;
 
-        margin: 0;           /* stop it from overlapping via negative margins */
-        border-radius: 12px; /* optional; remove if you want square */
+        margin: 0;
+        border-radius: 16px;   /* slightly smoother look */
       }
 
       @media (max-width: 992px) {
         justify-content: center;
 
         img {
-          width: min(420px, 100%);
+          width: min(500px, 100%);
         }
       }
     }
