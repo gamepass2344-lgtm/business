@@ -3,144 +3,153 @@
   overflow: hidden;
   min-height: calc(100vh - 84px);
   padding: 8rem 0 0;
-
-  @media (max-width: 767px) {
-    padding: 3rem 0 0;
-  }
-
-  /* Background layer */
-  .banner_image {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-
-    background: url('../../assets/banner/banner.jpg') no-repeat center center;
-    background-size: cover;
-
-    /* Slight shift so it doesn’t sit behind side image */
-    background-position: 65% center;
-
-    &::before {
-      content: none;
-      display: none;
-    }
-  }
-
-  /* Content layer */
-  .banner_outer {
-    position: relative;
-    z-index: 3;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 3rem;
-
-    padding: 0 3rem;
-
-    @media (max-width: 992px) {
-      flex-direction: column-reverse;
-      padding: 0 1.5rem;
-    }
-
-    .col {
-      width: calc(100% / 2 - 20px);
-      position: relative;
-
-      @media (max-width: 992px) {
-        width: 100%;
-      }
-    }
-
-    .title {
-      width: 90%;
-      font-size: 4rem;
-      line-height: 5rem;
-      font-weight: 200;
-      margin-bottom: 1rem;
-      text-transform: uppercase;
-
-      span {
-        font-weight: 800;
-      }
-
-      @media (max-width: 992px) {
-        width: 100%;
-        margin-top: 8rem;
-        text-align: center;
-        line-height: 4rem;
-      }
-
-      @media (max-width: 767px) {
-        font-size: 2.5rem;
-      }
-    }
-
-    p {
-      width: 90%;
-      margin: 0;
-      font-size: 1.143rem;
-      line-height: 2rem;
-      color: var(--font-color);
-
-      @media (max-width: 992px) {
-        width: 100%;
-        text-align: center;
-      }
-    }
-
-    /* SIDE IMAGE */
-    .sub_banner_image {
-      position: relative;
-      z-index: 4;
-      background: none;
-      border-radius: 0;
-
-      display: flex;
-      justify-content: flex-end;
-
-      img {
-        width: 480px;
-        max-width: 100%;
-        height: auto;
-        display: block;
-
-        margin: 0;
-        border-radius: 16px;
-      }
-
-      @media (max-width: 992px) {
-        justify-content: center;
-
-        img {
-          width: min(500px, 100%);
-        }
-      }
-    }
-  }
-  .tagline {
-  color: #007bff; /* clean blue */
 }
 
-  /* ✅ SAME .btn_wrapper, just moved lower (no button style changes) */
-  .btn_wrapper {
-    position: relative;
-    z-index: 3;
+/* Mobile padding */
+@media (max-width: 767px) {
+  #home {
+    padding: 3rem 0 0;
+  }
+}
 
-    margin-top: 4rem;
-    padding: 0 3rem 3rem;
+/* Background layer */
+#home .banner_image {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
 
-    display: flex;
+  background: url('../../assets/banner/banner.jpg') no-repeat center center;
+  background-size: cover;
+  background-position: 65% center;
+}
+
+/* Content layer */
+#home .banner_outer {
+  position: relative;
+  z-index: 3;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+
+  padding: 0 3rem;
+}
+
+@media (max-width: 992px) {
+  #home .banner_outer {
+    flex-direction: column-reverse;
+    padding: 0 1.5rem;
+  }
+}
+
+#home .banner_outer .col {
+  width: calc(100% / 2 - 20px);
+  position: relative;
+}
+
+@media (max-width: 992px) {
+  #home .banner_outer .col {
+    width: 100%;
+  }
+}
+
+#home .title {
+  width: 90%;
+  font-size: 4rem;
+  line-height: 5rem;
+  font-weight: 200;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+#home .title span {
+  font-weight: 800;
+}
+
+@media (max-width: 992px) {
+  #home .title {
+    width: 100%;
+    margin-top: 8rem;
+    text-align: center;
+    line-height: 4rem;
+  }
+}
+
+@media (max-width: 767px) {
+  #home .title {
+    font-size: 2.5rem;
+  }
+}
+
+/* Normal paragraph style */
+#home .banner_outer p {
+  width: 90%;
+  margin: 0;
+  font-size: 1.143rem;
+  line-height: 2rem;
+  color: var(--font-color);
+}
+
+@media (max-width: 992px) {
+  #home .banner_outer p {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* ✅ BLUE TAGLINE (This will now work) */
+#home .tagline {
+  color: #007bff !important;
+}
+
+/* Side Image */
+#home .sub_banner_image {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#home .sub_banner_image img {
+  width: 480px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0;
+  border-radius: 16px;
+}
+
+@media (max-width: 992px) {
+  #home .sub_banner_image {
     justify-content: center;
+  }
 
-    @media (max-width: 992px) {
-      padding: 0 1.5rem 2.5rem;
-      margin-top: 3rem;
-    }
+  #home .sub_banner_image img {
+    width: min(500px, 100%);
+  }
+}
 
-    @media (max-width: 767px) {
-      margin-top: 2.5rem;
-      padding-bottom: 2rem;
-    }
+/* Button */
+#home .btn_wrapper {
+  position: relative;
+  z-index: 3;
+  margin-top: 4rem;
+  padding: 0 3rem 3rem;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 992px) {
+  #home .btn_wrapper {
+    padding: 0 1.5rem 2.5rem;
+    margin-top: 3rem;
+  }
+}
+
+@media (max-width: 767px) {
+  #home .btn_wrapper {
+    margin-top: 2.5rem;
+    padding-bottom: 2rem;
   }
 }
