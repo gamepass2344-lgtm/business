@@ -60,23 +60,21 @@
         top: 0;
         left: 0;
         bottom: 0;
+        width: 250px;                 /* lock width */
+        transform: translateX(-100%); /* hidden */
+        transition: all 0.3s ease-in-out;
+        z-index: 9999;
 
-        /* closed state (doesn't really matter, but keep consistent) */
+        /* CLOSED state */
         background: transparent;
 
-        z-index: 9999;
-        transform: translateX(-250px);
-        transition: all 0.3s ease-in-out;
-
         &.active {
-          max-width: 250px;
-          min-width: 250px;
+          transform: translateX(0);
           padding: 2rem;
           box-sizing: border-box;
-          transform: translate(0px);
 
-          /* ✅ OPEN state background */
-          background: #000 !important;
+          /* ✅ THIS is the only thing that changes */
+          background-color: #000;  /* solid black */
         }
       }
 
@@ -120,11 +118,9 @@
 }
 
 @keyframes navbar {
-  0%,
-  100% {
+  0%, 100% {
     transform: translateY(0px);
   }
-
   50% {
     transform: translateY(-100px);
   }
