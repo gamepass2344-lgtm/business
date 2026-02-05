@@ -100,7 +100,10 @@
 
 /* ✅ BLUE TAGLINE (This will now work) */
 #home .tagline {
-  color: #007bff !important;
+  color: #0a3d91 !important;   /* darker, professional blue */
+  font-size: 1.4rem;           /* bigger than default */
+  font-weight: 600;            /* slightly bold */
+  line-height: 2.2rem;
 }
 
 /* Side Image */
