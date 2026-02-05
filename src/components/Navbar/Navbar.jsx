@@ -14,6 +14,11 @@ export default function Navbar() {
     setSidenav(!sidenav);
   };
 
+  // ✅ Close menu function
+  const closeMenu = () => {
+    setSidenav(false);
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       setSticky(window.scrollY > 20);
@@ -29,8 +34,6 @@ export default function Navbar() {
         <div className="container">
           <nav className="navbar" id="Navbar">
 
-            {/* Logo removed */}
-
             <div className="navbar_toggler" onClick={sidenavShow}>
               {menuIcon}
             </div>
@@ -38,31 +41,31 @@ export default function Navbar() {
             <div className={`menu_items ${sidenav ? "active" : ""}`}>
               <ul>
                 <li>
-                  <Link activeClass="active" to="home" spy smooth>
+                  <Link activeClass="active" to="home" spy smooth onClick={closeMenu}>
                     Home
                   </Link>
                 </li>
 
                 <li>
-                  <Link to="about" spy smooth>
+                  <Link to="about" spy smooth onClick={closeMenu}>
                     About US
                   </Link>
                 </li>
 
                 <li>
-                  <Link to="services" spy smooth>
+                  <Link to="services" spy smooth onClick={closeMenu}>
                     Services
                   </Link>
                 </li>
 
                 <li>
-                  <Link to="blog" spy smooth>
+                  <Link to="blog" spy smooth onClick={closeMenu}>
                     Blog
                   </Link>
                 </li>
 
                 <li>
-                  <Link to="contact" spy smooth>
+                  <Link to="contact" spy smooth onClick={closeMenu}>
                     Contact US
                   </Link>
                 </li>
