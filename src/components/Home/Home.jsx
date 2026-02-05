@@ -22,9 +22,9 @@ export default function Home() {
                 The <span>Family Plumbers</span>
               </h3>
 
-              <p>
-                In business for over 25+ years — perfectionists that get the job done right.
-              </p>
+             <p className="tagline">
+  In business for over 25+ years perfectionists that get the job done right.
+</p>
 
               {/* ✅ Back to the original wrapper so the button style stays the same */}
               <div className="btn_wrapper">
