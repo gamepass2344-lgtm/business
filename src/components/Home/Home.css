@@ -89,16 +89,6 @@
       }
     }
 
-    /* (Optional) if you still have .btn_wrapper somewhere, keep it from breaking layout */
-    .btn_wrapper {
-      margin-top: 2rem;
-
-      @media (max-width: 992px) {
-        display: flex;
-        justify-content: center;
-      }
-    }
-
     /* SIDE IMAGE */
     .sub_banner_image {
       position: relative;
@@ -129,12 +119,14 @@
     }
   }
 
-  /* ✅ Bottom "Get Started" button */
-  .bottom_cta {
+  /* ✅ SAME .btn_wrapper, just moved lower (no button style changes) */
+  .btn_wrapper {
     position: relative;
     z-index: 3;
+
     margin-top: 4rem;
-    padding: 0 3rem 3rem; /* adds breathing room at bottom */
+    padding: 0 3rem 3rem;
+
     display: flex;
     justify-content: center;
 
