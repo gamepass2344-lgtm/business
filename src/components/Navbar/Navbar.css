@@ -1,121 +1,127 @@
+/* ================= HEADER ================= */
+
 #site_header {
   position: relative;
   z-index: 5;
+  background-color: var(--bg-color);
+  padding: 0.5rem 0 1rem;
+  transition: 0.3s all ease-in-out;
+}
 
-  &.sticky {
+/* Sticky */
+#site_header.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: var(--bg-color);
+  animation: navbar 0.3s linear forwards;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar_brand img {
+  max-width: 80%;
+}
+
+/* Toggler */
+.navbar_toggler {
+  display: none;
+}
+
+.navbar_toggler svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.navbar_toggler svg path {
+  fill: var(--white-color);
+}
+
+@media (max-width: 992px) {
+  .navbar_toggler {
+    display: block;
+  }
+}
+
+/* ================= MENU ================= */
+
+.menu_items {
+  display: flex;
+}
+
+.menu_items ul {
+  margin: 0;
+  padding: 0;
+}
+
+.menu_items li {
+  list-style: none;
+  display: inline-block;
+  padding: 0 1rem;
+}
+
+.menu_items a {
+  padding: 0.675rem 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--white-color);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.menu_items a:hover,
+.menu_items a:focus,
+.menu_items a.active {
+  color: var(--primary-nav-color);
+}
+
+/* ================= MOBILE MENU ================= */
+
+@media (max-width: 992px) {
+
+  .menu_items {
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    z-index: 100;
-    width: 100%;
-    height: auto;
-    background-color: var(--bg-color);
-    padding: 0.5rem 0 1rem;
-    transform: translateY(0px);
+    height: 100vh;
+    width: 250px;
+
+    transform: translateX(-260px);
     transition: all 0.3s ease-in-out;
-    animation: navbar 0.3s linear forwards;
+
+    background: transparent; /* closed state */
+    z-index: 9999;
+    padding-top: 4rem;
   }
 
-  background-color: var(--bg-color);
-  padding: 0.5rem 0 1rem;
-  transform: translateY(0px);
-  transition: 0.3s all ease-in-out;
+  .menu_items.active {
+    transform: translateX(0);
+    background: #000; /* ✅ solid black */
+    padding: 2rem;
+  }
 
-  .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  .menu_items li {
+    display: block;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding: 0;
+  }
 
-    .navbar_brand img {
-      max-width: 80%;
-    }
-
-    .navbar_toggler {
-      display: none;
-
-      & svg {
-        line-height: 2.8571rem;
-        margin-right: 1.0714rem;
-        text-align: center;
-        width: 1.4286rem;
-        height: 1.4286rem;
-        border-radius: 50%;
-
-        & path {
-          fill: var(--white-color);
-        }
-      }
-
-      @media (max-width: 992px) {
-        display: block;
-      }
-    }
-
-    .menu_items {
-      display: flex;
-
-      @media (max-width: 992px) {
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        width: 250px;                 /* lock width */
-        transform: translateX(-100%); /* hidden */
-        transition: all 0.3s ease-in-out;
-        z-index: 9999;
-
-        /* CLOSED state */
-        background: transparent;
-
-        &.active {
-          transform: translateX(0);
-          padding: 2rem;
-          box-sizing: border-box;
-
-          /* ✅ THIS is the only thing that changes */
-          background-color: #000;  /* solid black */
-        }
-      }
-
-      & ul {
-        margin: 0;
-        padding: 0;
-
-        & li {
-          list-style: none;
-          display: inline-block;
-          position: relative;
-          padding: 0 1rem;
-
-          @media (max-width: 992px) {
-            display: block;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-          }
-
-          & a {
-            padding: 0.675rem 0;
-            font-size: 1.1rem;
-            font-weight: 500;
-            color: var(--white-color);
-            cursor: pointer;
-
-            @media (max-width: 992px) {
-              padding: 1rem 0;
-              display: block;
-            }
-
-            &.active,
-            &:hover,
-            &:focus {
-              color: var(--primary-nav-color);
-            }
-          }
-        }
-      }
-    }
+  .menu_items a {
+    display: block;
+    padding: 1rem 0;
+    color: #fff;
   }
 }
+
+/* ================= ANIMATION ================= */
 
 @keyframes navbar {
   0%, 100% {
