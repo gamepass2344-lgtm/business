@@ -1,6 +1,6 @@
 import React from "react";
 import './Home.css';
-import BannerImage from '../../assets/banner/banner-img.jpg';
+import BannerImage from '../../assets/banner/banner-img.png';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChartLine,faShieldHalved,faChartArea} from "@fortawesome/free-solid-svg-icons";
 
