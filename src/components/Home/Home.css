@@ -34,7 +34,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 3rem; /* more spacing */
+    gap: 3rem;
 
     padding: 0 3rem;
 
@@ -89,6 +89,16 @@
       }
     }
 
+    /* (Optional) if you still have .btn_wrapper somewhere, keep it from breaking layout */
+    .btn_wrapper {
+      margin-top: 2rem;
+
+      @media (max-width: 992px) {
+        display: flex;
+        justify-content: center;
+      }
+    }
+
     /* SIDE IMAGE */
     .sub_banner_image {
       position: relative;
@@ -100,13 +110,13 @@
       justify-content: flex-end;
 
       img {
-        width: 480px;          /* ⬅ bigger */
+        width: 480px;
         max-width: 100%;
         height: auto;
         display: block;
 
         margin: 0;
-        border-radius: 16px;   /* slightly smoother look */
+        border-radius: 16px;
       }
 
       @media (max-width: 992px) {
@@ -116,6 +126,26 @@
           width: min(500px, 100%);
         }
       }
+    }
+  }
+
+  /* ✅ Bottom "Get Started" button */
+  .bottom_cta {
+    position: relative;
+    z-index: 3;
+    margin-top: 4rem;
+    padding: 0 3rem 3rem; /* adds breathing room at bottom */
+    display: flex;
+    justify-content: center;
+
+    @media (max-width: 992px) {
+      padding: 0 1.5rem 2.5rem;
+      margin-top: 3rem;
+    }
+
+    @media (max-width: 767px) {
+      margin-top: 2.5rem;
+      padding-bottom: 2rem;
     }
   }
 }
