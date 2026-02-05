@@ -1,11 +1,10 @@
 import React from "react";
-import './Home.css';
-import BannerImage from '../../assets/banner/banner-img.png';
+import "./Home.css";
+import BannerImage from "../../assets/banner/banner-img.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChartLine, faShieldHalved, faChartArea } from "@fortawesome/free-solid-svg-icons";
 
 export default function Home() {
-
   // Keep mobile icons
   const faChartIcon = <FontAwesomeIcon icon={faChartLine} />;
   const faShieldIcon = <FontAwesomeIcon icon={faShieldHalved} />;
@@ -18,7 +17,6 @@ export default function Home() {
 
         <div className="container">
           <div className="banner_outer">
-
             <div className="col">
               <h3 className="title">
                 The <span>Family Plumbers</span>
@@ -27,11 +25,18 @@ export default function Home() {
               <p>
                 In business for over 25+ years — perfectionists that get the job done right.
               </p>
+
+              {/* ✅ Back to the original wrapper so the button style stays the same */}
+              <div className="btn_wrapper">
+                <a className="btn" href="#contact">
+                  Get Started
+                </a>
+              </div>
             </div>
 
             <div className="col">
               <div className="sub_banner_image">
-                <img src={BannerImage} alt="Banner_image"/>
+                <img src={BannerImage} alt="Banner_image" />
               </div>
 
               {/* Keeping mobile style floating boxes */}
@@ -49,17 +54,8 @@ export default function Home() {
                 {faChartAreaIcon}
                 <h4>25+ Years Experience</h4>
               </div>
-
             </div>
           </div>
-
-          {/* Button moved to bottom */}
-          <div className="bottom_cta">
-            <a className="btn" href="#contact">
-              Get Started
-            </a>
-          </div>
-
         </div>
       </section>
     </>
