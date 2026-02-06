@@ -2,19 +2,19 @@ import React,{ useState, useEffect } from "react";
 import "./Navbar.css";
 import { Link } from "react-scroll";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons"
+import { faBars, faPhone } from "@fortawesome/free-solid-svg-icons";
 
 export default function Navbar() {
   const [sidenav, setSidenav] = useState(false);
   const [sticky, setSticky] = useState(false);
 
   const menuIcon = <FontAwesomeIcon icon={faBars} />;
+  const phoneIcon = <FontAwesomeIcon icon={faPhone} />;
 
   const sidenavShow = () => {
     setSidenav(!sidenav);
   };
 
-  // ✅ Close menu function
   const closeMenu = () => {
     setSidenav(false);
   };
@@ -34,10 +34,19 @@ export default function Navbar() {
         <div className="container">
           <nav className="navbar" id="Navbar">
 
+            {/* LEFT SIDE - MENU ICON */}
             <div className="navbar_toggler" onClick={sidenavShow}>
               {menuIcon}
             </div>
 
+            {/* RIGHT SIDE - PHONE ICON (MOBILE ONLY) */}
+            <div className="mobile_call">
+              <a href="tel:+17273923936">
+                {phoneIcon}
+              </a>
+            </div>
+
+            {/* MENU */}
             <div className={`menu_items ${sidenav ? "active" : ""}`}>
               <ul>
                 <li>
