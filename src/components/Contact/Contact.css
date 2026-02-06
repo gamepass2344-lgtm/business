@@ -1,97 +1,95 @@
-#contact{
-        padding: 3rem 0;
+#contact {
+  padding: 3rem 0;
+}
 
-        .contact_wrapper{
-                display: flex;
-                justify-content: space-between;
-                margin-top: 4rem;
-                flex-wrap: wrap;
+#contact .contact_wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4rem;
+  flex-wrap: wrap;
+}
 
-                @media (max-width:992px) {
-                        justify-content: center;
-                        
-                }
-                @media (max-width:992px) {
-                        flex-direction: column;
-                }
+@media (max-width: 992px) {
+  #contact .contact_wrapper {
+    justify-content: center;
+    flex-direction: column;
+  }
+}
 
-                .contact_col{
-                        width: calc(100% / 2 - 1rem);
-                        padding: 1rem;
-                        box-sizing: border-box;
+#contact .contact_col {
+  width: calc(100% / 2 - 1rem);
+  padding: 1rem;
+  box-sizing: border-box;
+}
 
-                        @media (max-width:992px) {
-                                width: 50%;
-                        }
-                        @media (max-width:992px) {
-                               width: 100%;
-                        }
-                }
-                .input_wrapper{
-                        width: 100%;
-                        display: flex;
+@media (max-width: 992px) {
+  #contact .contact_col {
+    width: 100%;
+  }
+}
 
-                        .form-control{
-                                width:100%;
-                                background-color: transparent;
-                                border:.0714rem  solid var(--white-color);
-                                color:var(--white-color);
-                                font-size: 1.0714rem;
-                                padding: .7143rem 1.4286rem;
-                                border-radius: .5714rem;
-                                margin-bottom: 3rem;
-                        }
+#contact .input_wrapper {
+  width: 100%;
+  display: flex;
+}
 
-                        & textarea{
-                                width:100%;
-                                display: block;
-                                background-color: transparent;
-                                border:.0714rem  solid var(--white-color);
-                                color:var(--white-color);
-                                font-size: 1.0714rem;
-                                font-weight: 400;
-                                padding: .7143rem 1.4286rem;
-                                border-radius: .5714rem;
-                                min-height: 7.1429rem;
-                        }
+#contact .input_wrapper .form-control {
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid var(--white-color);
+  color: var(--white-color);
+  font-size: 1.0714rem;
+  padding: 0.7143rem 1.4286rem;
+  border-radius: 0.5714rem;
+  margin-bottom: 3rem;
+}
 
-                        .form-control:hover,
-                        & textarea:hover,
-                        .form-control:focus,
-                        & textarea:focus{
-                                border-color:rgb(0, 0, 7) blue;
-                                color:var(--white-color);
-                        }
-                }
-                .btn_wrapper{
-                        margin-top: 2rem;
-                }
-                .contact_image{
-                        position: relative;
+#contact .input_wrapper textarea {
+  width: 100%;
+  display: block;
+  background-color: transparent;
+  border: 1px solid var(--white-color);
+  color: var(--white-color);
+  font-size: 1.0714rem;
+  padding: 0.7143rem 1.4286rem;
+  border-radius: 0.5714rem;
+  min-height: 7.1429rem;
+}
 
-                        &:after{
-                                overflow: hidden;
-                                content:url('../../assets/about/layer_2.png');
-                                z-index: 1;
-                                position: absolute;
-                                top:-70px;
-                                right: -20px;
-                                max-width: 100%;
-                        }
+#contact .input_wrapper .form-control:hover,
+#contact .input_wrapper textarea:hover,
+#contact .input_wrapper .form-control:focus,
+#contact .input_wrapper textarea:focus {
+  border-color: blue;
+  outline: none;
+}
 
-                        @media (max-width:1024px) {
-                                &:after{
-                                        right:0;
-                                }
-                                
-                        }
+#contact .btn_wrapper {
+  margin-top: 2rem;
+}
 
-                        & img{
-                                border-radius: 2.1429rem;
-                                position: relative;
-                                z-index: 2;
-                                max-width: 85%;
-                        }
-                }
-        }
+#contact .contact_image {
+  position: relative;
+}
+
+#contact .contact_image::after {
+  content: url('../../assets/about/layer_2.png');
+  z-index: 1;
+  position: absolute;
+  top: -70px;
+  right: -20px;
+  max-width: 100%;
+}
+
+@media (max-width: 1024px) {
+  #contact .contact_image::after {
+    right: 0;
+  }
+}
+
+#contact .contact_image img {
+  border-radius: 2.1429rem;
+  position: relative;
+  z-index: 2;
+  max-width: 85%;
 }
