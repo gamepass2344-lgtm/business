@@ -63,13 +63,13 @@
             display:inline-block;
             margin-left:8px;
             font-weight:700;
-            color:var(--secondary-color);
+            color:#8B0000;
             text-decoration:underline;
             transition:0.3s ease;
         }
 
         .blog_phone_link:hover{
-            opacity:0.8;
+            opacity:0.85;
         }
 
         /* Call Button Styling */
@@ -82,7 +82,7 @@
             padding:0.9rem 2rem;
             font-size:1.1rem;
             font-weight:600;
-            background-color:var(--secondary-color);
+            background-color:#8B0000;
             color:#fff;
             border-radius:0.5rem;
             text-decoration:none;
@@ -90,8 +90,9 @@
         }
 
         .btn:hover{
+            background-color:#6f0000; /* slightly darker on hover */
             transform:translateY(-3px);
-            opacity:0.9;
+            opacity:1;
         }
 
         .blog_image{
@@ -101,7 +102,7 @@
             &:after{
                 content:'';
                 position:absolute;
-                border:10px solid var(--secondary-color);
+                border:10px solid #8B0000;
                 right:45px;
                 left:-45px;
                 bottom:45px;
