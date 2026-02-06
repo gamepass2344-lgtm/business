@@ -37,10 +37,14 @@
                 width:100%; 
                 text-align: center;
             }
+
+            /* FIX MOBILE WRAPPING */
             @media (max-width:767px){ 
                 width:100%;
-                font-size: 2.2rem;
-                line-height: 3.5rem; 
+                font-size:1.9rem;
+                line-height:2.6rem;
+                text-align:center;
+                text-transform:none; /* prevents awkward all-caps wrapping */
             }
         }
 
