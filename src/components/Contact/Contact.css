@@ -72,17 +72,8 @@
   position: relative;
 }
 
-#contact .contact_image::after {
-  content: url('../../assets/about/layer_2.png');
-  z-index: 1;
-  position: absolute;
-  top: -70px;
-  right: -20px;
-  max-width: 100%;
-}
-
 @media (max-width: 1024px) {
-  #contact .contact_image::after {
+  #contact .contact_image {
     right: 0;
   }
 }
