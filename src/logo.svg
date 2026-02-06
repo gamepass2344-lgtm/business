@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="70" viewBox="0 0 200 70">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1e88e5"/>
+      <stop offset="1" stop-color="#0d47a1"/>
+    </linearGradient>
+
+    <mask id="wrenchMask" maskUnits="userSpaceOnUse">
+      <rect width="200" height="70" fill="black"/>
+      <g transform="rotate(-35 100 35)">
+        <!-- outer body -->
+        <circle cx="100" cy="22" r="16" fill="white"/>
+        <rect x="93" y="24" width="14" height="34" rx="7" fill="white"/>
+        <circle cx="100" cy="56" r="10" fill="white"/>
+
+        <!-- cutouts -->
+        <circle cx="100" cy="22" r="10" fill="black"/>
+        <rect x="106" y="5" width="32" height="34" rx="6" fill="black" transform="rotate(22 100 22)"/>
+        <circle cx="100" cy="58" r="3.5" fill="black"/>
+      </g>
+    </mask>
+  </defs>
+
+  <rect width="200" height="70" fill="url(#bg)"/>
+  <rect width="200" height="70" fill="white" mask="url(#wrenchMask)"/>
+</svg>
